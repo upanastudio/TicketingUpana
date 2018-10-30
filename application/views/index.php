@@ -1,20 +1,19 @@
+<?php if(!$this->session->userdata('logged_in')) : ?>
+<?php redirect('users/login'); ?>
+<?php endif; ?>
+
+<?php if($this->session->userdata('logged_in')) : ?>
 <!DOCTYPE html>
 <html>
-  <?php
-    if(isset($this->session->userdate['logged_in'])){
-      $username = ($this->session->userdata['logged_in']['username']);
-      // $email = ($this->session->userdata['logged_in']['email']);
-    }else {
-      header("location: login");
-    }
-   ?>
   <head>
-    <meta charset="utf-8">
-    <title>Bereanda</title>
+    <title>Beranda</title>
   </head>
   <body>
-    <h1 style="text-align:center">Selamat Datang <?= ". $username ." ?> </h1>
-    <br><br>
-    <b id="logout"><a href="logout">LOGOUT</a></b>
+    <div style="text-align:center">
+      <h1>Selamat datang USER</h1>
+
+      <p><a href="<?php echo base_url(); ?>users/logout">Logout</a></p>
+    </div>
   </body>
 </html>
+<?php endif; ?>
