@@ -1,7 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$route['admin'] = 'admin/index';
+// $route['admin'] = 'admin/index';
+$route['openissue'] = 'issues/OpenIssues';
+$route['closeissue'] = 'issues/CloseIssues';
 
 $route['default_controller'] = 'pages/view';
 

@@ -14,5 +14,15 @@
 				return false;
 			}
 		}
+
+		public function get_akses($akses_level = FALSE){
+			if ($akses_level === FALSE) {
+				$this->db->get('users');
+				return $query->result_array();
+			}
+
+			$query = $this->db->get_where('users', array('akses_level' => $slug));
+			return $query->row_array();
+		}
 	}
 ?>

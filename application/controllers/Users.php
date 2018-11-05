@@ -35,13 +35,10 @@
 
           $this->session->set_userdata($user_data);
 
-          // if ($this->session->akses_level == ) {
-          //   // code...
-          // }
             //set Message
             $this->session->set_flashdata('user_loggedin', 'You are now Logged in');
 
-            redirect('index');
+            $this->load->view('admin/pages/index');
 
         }else {
           $this->session->set_flashdata('login_failed', 'Login is Invalid');
@@ -61,6 +58,17 @@
 
       redirect('users/login');
 
+    }
+
+    public function get_data($akses_level = NULL){
+      $data['users'] = $this->user_model->get_akses($akses_level);
+      $user_id = $data['id_users']['akses_level'];
+
+      if(empty($data['post'])){
+        show_404();
+      }
+
+      $this->load->view('index', $data);
     }
   }
 

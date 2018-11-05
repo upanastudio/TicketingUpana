@@ -18,8 +18,9 @@ class Login extends CI_Controller {
 
         if ($valid->run() === FALSE)
         {
-            $data = array('title'   => 'Login ke Sisyem');
-            $this->load->view('login/login', $data);
+            $data = array('title'  => 'Login ke Sistem');
+            // $this->load->view('users/login', $data);
+            redirect('index');
         }
         else
         {

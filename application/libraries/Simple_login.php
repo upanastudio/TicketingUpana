@@ -40,7 +40,8 @@ class Simple_login {
                 if (($cek->username != $usr) OR ($cek->password != $psw))
                 {
                     $this->CI->session->set_flashdata('gagal', 'Data cookie Anda berubah.<br/>Silakan login ulang.');
-                    redirect(login_url());
+                    // redirect(login_url());
+                    redirect('users/login');
                 }
                 else
                 {
@@ -50,7 +51,8 @@ class Simple_login {
             else
             {
                 $this->CI->session->set_flashdata('gagal', 'Sesi Anda sudah habis.<br/>Silakan login terlebih dahulu.');
-                redirect(login_url());
+                // redirect('users/login')
+                redirect('users/login');
             }
         }
 
@@ -117,13 +119,15 @@ class Simple_login {
 
                 // Kalau benar di-redirect
                 $this->CI->session->set_flashdata('sukses', 'Anda berhasil login.');
-                redirect(admin_url());
+                // redirect(admin_url());
+                redirect('index');
             }
         }
         else
         {
             $this->CI->session->set_flashdata('gagal', 'Username/password Anda salah!');
-            redirect(login_url());
+            // redirect(login_url());
+            redirect('users/login');
         }
         return false;
     }
@@ -136,6 +140,7 @@ class Simple_login {
         delete_cookie('mylgn');
 
         $this->CI->session->set_flashdata('sukses', 'Anda sudah logout.');
-        redirect(login_url());
+        // redirect(login_url());
+        redirect('users/login');
     }
 }
