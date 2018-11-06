@@ -288,10 +288,10 @@
                             <ul class="nav nav-second-level">
 
                                 <li>
-                                    <a href="OpenIssue.html"><i class="fa fa-table fa-fw"></i> Open Issue</a>
+                                    <a href="<?php echo base_url();?>issues/open"><i class="fa fa-table fa-fw"></i> Open Issue</a>
                                 </li>
                                  <li>
-                                    <a href="CloseIssue.html"><i class="fa fa-table fa-fw"></i> Close Issue</a>
+                                    <a href="<?php echo base_url();?>issues/close"><i class="fa fa-table fa-fw"></i> Close Issue</a>
                                 </li>
                             </ul>
                         </li>

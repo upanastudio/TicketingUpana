@@ -38,7 +38,7 @@
             //set Message
             $this->session->set_flashdata('user_loggedin', 'You are now Logged in');
 
-            $this->load->view('admin/pages/index');
+            $this->load->view('admin/pages/home');
 
         }else {
           $this->session->set_flashdata('login_failed', 'Login is Invalid');

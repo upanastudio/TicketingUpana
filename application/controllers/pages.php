@@ -10,7 +10,7 @@
       // }
 
       public function view(){
-        $this->load->view('admin/pages/index');
+        $this->load->view('admin/pages/home');
       }
     }
  ?>
